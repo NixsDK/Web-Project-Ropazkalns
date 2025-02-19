@@ -6,11 +6,14 @@
     <title>General Inquiries - Ropazkalns</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
             background: #fdfdfd url('images/Forest.JPG') no-repeat center top;
             background-size: cover;
             position: relative;
         }
+
 
         main {
             width: 100%;
@@ -73,8 +76,6 @@
             display: flex;
             align-items: center; /* Aligns logo and menu */
             justify-content: space-between; /* Ensures logo is on the left */
-
-
 
         }
         .menu li {
