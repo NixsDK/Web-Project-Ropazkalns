@@ -62,7 +62,7 @@
             padding: 0;
             margin: 0;
             display: flex;
-            margin-left: auto;
+            margin-left 150px;
         }
 
         header {
@@ -72,7 +72,7 @@
             text-align: center;
             display: flex;
             align-items: center; /* Aligns logo and menu */
-            justify-content: flex-start; /* Ensures logo is on the left */
+            justify-content: space-between; /* Ensures logo is on the left */
 
 
 
@@ -183,7 +183,7 @@
             color: #70c654; /* Text color */
             font-weight: bold;
             position: absolute; /* Allows precise placement */
-            top: 10px; /* Adjust to move higher */
+            top: 0px; /* Adjust to move higher */
             left: 20px; /* Adjust to align left */
             z-index: 10; /* Ensures it stays above buttons */
 
