@@ -1,194 +1,88 @@
-<?php
-// PHP code
-$greeting = "<h1 style='color: #FFFFFF;'>Rent for day Corporate Events</h1>";
-?>
+<?php include "head.php"; ?>
+<style>
+    /* Main container */
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team - Ropazkalns</title>
-    <style
+    /* Container for rental items */
+    .rent-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-    <style>
-        /* Your CSS styles here */
-        * {
-            box-sizing: border-box;
-        }
+    /* Individual rental item boxes */
+    .rent-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 250px;
+        height: 350px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #FFFFFF;
+        text-align: center;
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+        padding: 15px;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('images/Ropazkalns.JPG');
-            background-size: cover;
-            background-position: center;
-        }
+    /* Images inside rental boxes */
+    .rent-item img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        padding: 5px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
+    /* Text styling */
+    .rent-item h3, .rent-item p {
+        margin: 10px 0;
+        color: #ffffff;
+    }
 
-        .menu li {
-            position: relative;
-        }
-
-        .menu li a {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ffffff; /* Change this color to the desired color for main menu items */
-        }
-
-        .menu li:hover > a {
-            background-color: #f2f2f2;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            min-width: 200px;
-            background-color: #fff;
-            font-weight: bold;
-            color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-menu li a {
-            padding: 8px 16px;
-            color: #000000; /* Change this color to the desired color for dropdown menu items */
-        }
-
-        .dropdown-menu li:hover > a {
-            background-color: #f2f2f2;
-        }
-
-        .team-member {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: 20px;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #FFFFFF;
-            width: 250px;
-            height: 350px;
-            text-align: center;
-        }
-
-        .team-member img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown');
-
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('mouseenter', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'block';
-                });
-
-                dropdown.addEventListener('mouseleave', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'none';
-                });
-            });
-        });
-    </script>
-</head>
-<body>
-<header>
-    <nav>
-        <ul class="menu">
-            <li><a href="HomePage.php">Home</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">About</a>
-                <ul class="dropdown-menu">
-                    <li><a href="OurStory.php">Our Story</a></li>
-                    <li><a href="OurTeam.php">Our Team</a></li>
-                    <li><a href="OurVision.php">Our Vision</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Rentals</a>
-                <ul class="dropdown-menu">
-                    <li><a href="RentForDayActivities.php.">Rent for day activitiess</a></li>
-                    <li><a href="RentForPrivateEvents.php">Rent for private events</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Contact</a>
-                <ul class="dropdown-menu">
-                    <li><a href="GeneralInquieries.php">General Inquieries</a></li>
-                    <li><a href="BookingInformation.php">Booking Information</a></li>
-
-                </ul>
-            </li>
-
-        </ul>
-    </nav>
-
-</header>
-
+</style>
 
 <main>
-    <?php echo $greeting; ?>
+    <b style="color: #5cd682; background-color: rgba(0, 0, 0, 0.7); padding: 20px; font-size: 26px;">Rent for Corporate Events</b>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-        <div class="team-member">
-            <img src="images/Rent1.jpg" alt="Rent 1">
+    <div class="rent-container">
+        <div class="rent-item">
+            <img src="images/Rent1.jpg" alt="Buggy">
             <h3>Buggy</h3>
             <p>35$/h 180$/d</p>
         </div>
 
-        <div class="team-member">
-            <img src="images/Rent2.jpg" alt="Rent 2">
+        <div class="rent-item">
+            <img src="images/Rent2.jpg" alt="Motorbike">
             <h3>Motorbike</h3>
             <p>15$/h 150$/d</p>
         </div>
 
-        <div class="team-member">
-            <img src="images/Rent3.jpg" alt="Rent 3">
-            <h3>Water skies</h3>
+        <div class="rent-item">
+            <img src="images/Rent3.jpg" alt="Water Skies">
+            <h3>Water Skies</h3>
             <p>10$/h 100$/d</p>
         </div>
 
-        <div class="team-member">
-            <img src="images/Rent4.jpg" alt="Rent 4">
+        <div class="rent-item">
+            <img src="images/Rent4.jpg" alt="House">
             <h3>House</h3>
             <p>250$/d</p>
         </div>
     </div>
 </main>
 
-<!-- JavaScript embedded in the file -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('mouseenter', function() {
-                this.querySelector('.dropdown-menu').style.display = 'block';
-            });
-
-            dropdown.addEventListener('mouseleave', function() {
-                this.querySelector('.dropdown-menu').style.display = 'none';
-            });
-        });
-    });
-</script>
+<?php include "footer.php"; ?>
 </body>
 </html>
-
