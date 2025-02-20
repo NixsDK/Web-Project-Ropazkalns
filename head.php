@@ -157,12 +157,12 @@
 
         button::before {
             left: -10px;
-            background: #240046;
+            background: #0568f1;
         }
 
         button::after {
             right: -10px;
-            background: #5a189a;
+            background: #447df2;
         }
 
         button:hover::before,
@@ -171,7 +171,7 @@
         }
 
         button:hover span {
-            color: #e0aaff;
+            color: #ffffff;
             transition: 0.3s;
         }
 
