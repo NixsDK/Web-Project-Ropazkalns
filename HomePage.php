@@ -20,7 +20,7 @@
         height: 705px;
         width: 270px;
         overflow: hidden;
-        margin-left: -352px; /* Moves entire image div left */
+        margin-left: -342px; /* Moves entire image div left */
     ">
         <img src="images/Ropazkalns1.JPG" alt="Ropazkalns Countryside" style="
             width: 100%;
@@ -38,7 +38,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 600px;
-    margin-left: -530px; /* Moves text box closer to the image */
+    margin-left: -520px; /* Moves text box closer to the image */
     margin-top: -490px; /* Moves text box upwards */
 ">
 
