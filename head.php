@@ -63,11 +63,13 @@
         .menu {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            margin: 0 auto; /* Centers the menu horizontally */
             display: flex;
-            margin-left: 150px;
-            position: relative; /* Ensure proper stacking */
-            z-index: 2000; /* Higher than other elements */
+            justify-content: center; /* Centers buttons */
+            align-items: center; /* Aligns vertically */
+            position: relative;
+            z-index: 2000;
+            top: -10px; /* Moves the menu slightly upwards */
         }
 
         header {
@@ -187,14 +189,14 @@
             margin-right: 20px; /* Adjust margin as needed */
         }
 
-        .logo h1 {
+        .logo h {
             margin: 0; /* Remove default margins */
-            font-size: 24px; /* Adjust font size as needed */
+            font-size: 32px; /* Adjust font size as needed */
             color: #44aaed; /* Text color */
             font-weight: bold;
             position: absolute; /* Allows precise placement */
-            top: 0px; /* Adjust to move higher */
-            left:155px; /* Adjust to align left */
+            top: 35px; /* Adjust to move higher */
+            left:50px; /* Adjust to align left */
             z-index: 10; /* Ensures it stays above buttons */
 
         }
@@ -234,7 +236,7 @@
 <header>
     <nav>
         <div class="logo">
-            <h1>Ropažkalns</h1>
+            <h>Ropažkalns</h>
         </div>
         <ul class="menu">
             <a href="HomePage.php"><button class="button-64" role="button"><span class="text">Home</span></button></a>
