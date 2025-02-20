@@ -194,7 +194,7 @@
             font-weight: bold;
             position: absolute; /* Allows precise placement */
             top: 0px; /* Adjust to move higher */
-            left: 30px; /* Adjust to align left */
+            left:155px; /* Adjust to align left */
             z-index: 10; /* Ensures it stays above buttons */
 
         }
