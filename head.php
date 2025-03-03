@@ -159,7 +159,7 @@
 
         button::before {
             left: -10px;
-            background: #0568f1;
+            background: #447df2;
         }
 
         button::after {
@@ -192,7 +192,7 @@
         .logo h {
             margin: 0; /* Remove default margins */
             font-size: 32px; /* Adjust font size as needed */
-            color: #44aaed; /* Text color */
+            color: #508c39; /* Text color */
             font-weight: bold;
             position: absolute; /* Allows precise placement */
             top: 35px; /* Adjust to move higher */
