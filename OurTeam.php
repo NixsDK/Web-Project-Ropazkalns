@@ -55,7 +55,7 @@
     <b style="color: #5cd682; background-color: rgba(0, 0, 0, 0.7); padding: 20px; font-size: 26px;">Our Team</b>
 
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+    <div class="team-container">
         <div class="team-member">
             <img src="images/employee1.jpg" alt="Employee 1">
             <h3>John Doe</h3>
