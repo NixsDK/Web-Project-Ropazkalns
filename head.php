@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>General Inquiries - Ropazkalns</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
             margin: 0;
@@ -15,11 +16,6 @@
         }
 
 
-        main {
-            width: 100%;
-            height: 20vw;
-            position: relative;
-        }
 
         section {
             width: 100%;
