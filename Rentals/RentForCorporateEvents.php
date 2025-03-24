@@ -1,5 +1,4 @@
-
-<?php include "head.php"; ?>
+<?php include "../head.php"; ?>
 <style>
     /* Main container */
     main {
@@ -53,8 +52,9 @@
     }
 
 </style>
+
 <main>
-    <b style="color: #5cd682; background-color: rgba(0, 0, 0, 0.7); padding: 20px; font-size: 26px;">Rent for Day Activities</b>
+    <b style="color: #5cd682; background-color: rgba(0, 0, 0, 0.7); padding: 20px; font-size: 26px;">Rent for Corporate Events</b>
 
     <div class="rent-container">
         <div class="rent-item">
@@ -83,7 +83,6 @@
     </div>
 </main>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
 </body>
 </html>
-

@@ -1,17 +1,25 @@
+<?php
+// head.php (polished)
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Inquiries - Ropazkalns</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Ropažkalns Countryside</title>
+    <?php
+    // Dynamically set base path depending on current directory
+    $dir = basename(dirname($_SERVER['SCRIPT_NAME']));
+    $base = ($dir === 'About' || $dir === 'Rentals' || $dir === 'Contact') ? '../' : '';
+    ?>
+    <link rel="stylesheet" href="<?php echo $base; ?>css/styles.css">
     <style>
         body {
+            background: #fdfdfd url('/images/abstract4.jpg') no-repeat center top;
+            background-size: cover;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: #fdfdfd url('images/abstract4.jpg') no-repeat center top;
-            background-size: cover;
             position: relative;
         }
 
@@ -86,15 +94,13 @@
 
         .menu li a {
             display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ffffff; /* Change this color to the desired color for main menu items */
         }
 
 
         .menu li:hover > a {
             background-color: #f2f2f2;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         .dropdown {
@@ -114,7 +120,7 @@
             background-color: #fff;
             font-weight: bold;
             color: #000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow:none;
             z-index: 3000; /* Ensure it's above other elements */
         }
 
@@ -235,28 +241,28 @@
             <h>Ropažkalns</h>
         </div>
         <ul class="menu">
-            <a href="HomePage.php"><button class="button-64" role="button"><span class="text">Home</span></button></a>
+            <li><a href="<?php echo $base; ?>HomePage.php"><button><span>Home</span></button></a></li>
             <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">About</span></button>
+                <button><span>About</span></button>
                 <ul class="dropdown-menu">
-                    <li><a href="OurStory.php">Our Story</a></li> <!-- Updated Our Story link -->
-                    <li><a href="OurTeam.php">Our Team</a></li> <!-- Updated Our Team link -->
-                    <li><a href="OurVision.php">Our Vision</a></li> <!-- Updated Our Vision link -->
+                    <li><a href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
+                    <li><a href="<?php echo $base; ?>About/OurTeam.php">Our Team</a></li>
+                    <li><a href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">Rentals</span></button>
+                <button><span>Rentals</span></button>
                 <ul class="dropdown-menu">
-                    <li><a href="RentForDayActivities.php">Rent for day activities</a></li> <!-- Updated Rent for day activities link -->
-                    <li><a href="RentForPrivateEvents.php">Rent for private events</a></li> <!-- Updated Rent for private events link -->
-                    <li><a href="RentForCorporateEvents.php">Rent for corporate events</a></li> <!-- Updated Rent for corporate events link -->
+                    <li><a href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Rent for day activities</a></li>
+                    <li><a href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Rent for private events</a></li>
+                    <li><a href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Rent for corporate events</a></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">Contact</span></button>
+                <button><span>Contact</span></button>
                 <ul class="dropdown-menu">
-                    <li><a href="GeneralInquieries.php">General Inquiries</a></li> <!-- Updated General Inquiries link -->
-                    <li><a href="BookingInformation.php">Booking Information</a></li> <!-- Updated Booking Information link -->
+                    <li><a href="<?php echo $base; ?>Contact/GeneralInquieries.php">General Inquiries</a></li>
+                    <li><a href="<?php echo $base; ?>Contact/BookingInformation.php">Booking Information</a></li>
                 </ul>
             </li>
         </ul>

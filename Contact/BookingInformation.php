@@ -1,4 +1,5 @@
-<?php include "head.php";
+<?php include "../head.php"; ?>
+
 $greeting = "<h1 style='color: #FFFFFF;'>Booking Information</h1>";
 
 ?>
@@ -12,6 +13,6 @@ $greeting = "<h1 style='color: #FFFFFF;'>Booking Information</h1>";
     <?php include 'Calendar.php'; ?> <!-- Include Calendar.php here -->
 </main>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
 </body>
 </html>

@@ -48,11 +48,13 @@
         padding: 20px;
         min-height: auto;
     }
+
     .hero-image {
         margin-left: 0;
         width: 90%;
         height: auto;
     }
+
     .hero-text {
         position: static;
         margin-top: 20px;
@@ -61,3 +63,5 @@
         z-index: 1;
     }
 }
+
+

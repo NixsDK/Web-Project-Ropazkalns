@@ -1,4 +1,4 @@
-<?php include "head.php"; ?>
+<?php include "../head.php"; ?>
 
 <main>
     <h1 style="color: #FFFFFF;">Our Story</h1>
@@ -68,7 +68,7 @@
     </p>
 </main>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
 
 </body>
 </html>

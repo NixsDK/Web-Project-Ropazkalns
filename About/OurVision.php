@@ -1,4 +1,4 @@
-<?php include "head.php"; ?>
+<?php include "../head.php"; ?>
 
     <main>
         <h1 style='color: #FFFFFF;'>Our Vison</h1>
@@ -10,7 +10,7 @@
         <p style='color: #FFFFFF; background-color: rgba(0, 0, 0, 0.7); padding: 10px;'>In addition to our outdoor activities, we also offer a variety of accommodation options, including cozy cabins, luxury tents, and a beautiful guesthouse. All of our accommodations are designed to blend seamlessly with the natural surroundings, providing a unique and immersive experience for our guests.</p>
         <p style='color: #FFFFFF; background-color: rgba(0, 0, 0, 0.7); padding: 10px;'>Whether you are looking for a quiet escape or an action-packed adventure, Ropazkalns has something for everyone. Come visit us and experience the beauty of the Latvian countryside for yourself!</p>
     </main>
-    <?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
 
 </body>
 </html>

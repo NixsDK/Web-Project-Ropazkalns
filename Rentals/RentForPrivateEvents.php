@@ -1,4 +1,5 @@
-<?php include "head.php"; ?>
+<?php include "../head.php"; ?>
+
 
 <style>
     /* Main container */
@@ -64,14 +65,14 @@
 
     <div class="rent-container">
         <div class="rent-item">
-            <img src="images/employee1.jpg" alt="CEO">
+            <img src="../images/employee1.jpg" alt="CEO">
             <h3>John Doe</h3>
             <p>CEO</p>
             <p>Phone: +371 26581569</p>
         </div>
 
         <div class="rent-item">
-            <img src="images/employee2.jpg" alt="COO">
+            <img src="../images/employee2.jpg" alt="COO">
             <h3>Jane Smith</h3>
             <p>COO</p>
             <p>Phone: +371 26581569</p>
@@ -79,6 +80,6 @@
     </div>
 </main>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
 </body>
 </html>

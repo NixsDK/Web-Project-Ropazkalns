@@ -1,4 +1,5 @@
-<?php include "head.php"; ?>
+<?php include "../head.php"; ?>
+
 <style>
     main {
         display: flex;
@@ -57,29 +58,29 @@
 
     <div class="team-container">
         <div class="team-member">
-            <img src="images/employee1.jpg" alt="Employee 1">
+            <img src="../images/employee1.jpg" alt="Employee 1">
             <h3>John Doe</h3>
             <p>CEO</p>
         </div>
 
         <div class="team-member">
-            <img src="images/employee2.jpg" alt="Employee 2">
+            <img src="../images/employee2.jpg" alt="Employee 2">
             <h3>Jane Smith</h3>
             <p>COO</p>
         </div>
 
         <div class="team-member">
-            <img src="images/employee3.jpg" alt="Employee 3">
+            <img src="../images/employee3.jpg" alt="Employee 3">
             <h3>Bob Johnson</h3>
             <p>Chief Guide</p>
         </div>
 
         <div class="team-member">
-            <img src="images/employee4.jpg" alt="Employee 4">
+            <img src="../images/employee4.jpg" alt="Employee 4">
             <h3>Alice Lee</h3>
             <p>Head of Marketing</p>
         </div>
     </div>
 </main>
 
-<?php include "footer.php"; ?>
+<?php include "../footer.php"; ?>
