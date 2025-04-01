@@ -1,270 +1,138 @@
 <?php
-// head.php (polished)
+// head.php (restored structure + Bootstrap + blur fixes)
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ropažkalns Countryside</title>
+
     <?php
-    // Dynamically set base path depending on current directory
     $dir = basename(dirname($_SERVER['SCRIPT_NAME']));
     $base = ($dir === 'About' || $dir === 'Rentals' || $dir === 'Contact') ? '../' : '';
     ?>
-    <link rel="stylesheet" href="<?php echo $base; ?>css/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="<?php echo $base; ?>css/styles.css" />
+
     <style>
         body {
-            background: #fdfdfd url('/images/abstract4.jpg') no-repeat center top;
-            background-size: cover;
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            position: relative;
+            background: #fdfdfd url('/images/abstract4.jpg') no-repeat center top;
+            background-size: cover;
         }
 
-
-
-        section {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-        }
-
-        /* Mountain layers */
-        section:first-child,
-        section:nth-child(2),
-        section:last-child {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%; /* Adjust height as needed */
-        }
-
-        section:first-child > div:first-child,
-        section:first-child > div:nth-child(2),
-        section:first-child > div:nth-child(3),
-        section:first-child > div:last-child,
-        section:nth-child(2) > div:first-child,
-        section:nth-child(2) > div:last-child,
-        section:last-child > div:first-child,
-        section:last-child > div:nth-child(2),
-        section:last-child > div:last-child {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Your existing styles */
-        * {
-            box-sizing: border-box;
-        }
-
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0 auto; /* Centers the menu horizontally */
-            display: flex;
-            justify-content: center; /* Centers buttons */
-            align-items: center; /* Aligns vertically */
-            position: relative;
-            z-index: 2000;
-            top: -10px; /* Moves the menu slightly upwards */
-        }
-
-        header {
-            height: 88px;
-            padding: 20px 0;
-            background: rgba(173, 216, 230, 0.4);
+        .navbar {
+            background-color: rgba(173, 216, 230, 0.4) !important;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            z-index: 1000; /* Lower than dropdown */
-            position: relative;
+            z-index: 9999;
         }
 
-
-        .menu li {
-            position: relative;
-        }
-
-        .menu li a {
-            display: block;
-        }
-
-
-        .menu li:hover > a {
-            background-color: #f2f2f2;
-            text-decoration: none;
+        .navbar-brand {
+            font-size: 28px;
             font-weight: bold;
+            color: #508c39 !important;
         }
 
-        .dropdown {
-            position: relative;
-            z-index: 2000;
+        .nav-link {
+            font-weight: bold;
         }
 
         .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            min-width: 200px;
-            background-color: #fff;
-            font-weight: bold;
-            color: #000;
-            box-shadow:none;
-            z-index: 3000; /* Ensure it's above other elements */
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 9999 !important;
+            position: absolute !important;
+            backdrop-filter: blur(6px); /* frosted glass effect */
+            -webkit-backdrop-filter: blur(6px);
         }
 
-        .dropdown-menu li a {
-            padding: 8px 16px;
-            color: #000000; /* Change this color to the desired color for dropdown menu items */
+        .dropdown-item {
+            color: #333;
+            font-weight: 500;
         }
 
-        .dropdown-menu li:hover > a {
-            background-color: #f2f2f2;
+        .dropdown-item:hover {
+            background-color: rgba(0, 0, 0, 0.05);
         }
 
-        /* New button styling */
-        button {
-            display: inline-block;
-            width: 150px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #03045e;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease-in;
-            z-index: 1;
-        }
-
-        button::before,
-        button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 0;
-            height: 100%;
-            transform: skew(15deg);
-            transition: all 0.5s;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        button::before {
-            left: -10px;
-            background: #447df2;
-        }
-
-        button::after {
-            right: -10px;
-            background: #447df2;
-        }
-
-        button:hover::before,
-        button:hover::after {
-            width: 58%;
-        }
-
-        button:hover span {
-            color: #ffffff;
-            transition: 0.3s;
-        }
-
-        button span {
-            color: #03045e;
-            font-size: 18px;
-            transition: all 0.3s ease-in;
-        }
-
-        .logo {
-            display: inline-block; /* Make the logo and menu items inline */
-            vertical-align: middle; /* Align vertically in the middle */
-            margin-right: 20px; /* Adjust margin as needed */
-        }
-
-        .logo h {
-            margin: 0; /* Remove default margins */
-            font-size: 32px; /* Adjust font size as needed */
-            color: #508c39; /* Text color */
-            font-weight: bold;
-            position: absolute; /* Allows precise placement */
-            top: 35px; /* Adjust to move higher */
-            left:50px; /* Adjust to align left */
-            z-index: 10; /* Ensures it stays above buttons */
-
-        }
         footer {
-            background: rgba(173, 216, 230, 0.4); /* Light blue with transparency */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional subtle border */
+            background: rgba(173, 216, 230, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
             color: black;
             text-align: center;
             padding: 8px;
-            font-size: 12px;
+            font-size: 14px;
             position: relative;
-            bottom: -120px; /* Keeps footer in the same position */
-            margin-top: 330px; /* Maintains spacing from main content */
-            border-radius: 10px; /* Optional: Gives smooth rounded edges */
+            bottom: -380px; /* lower the footer */
+            margin-top: 0;
         }
 
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown');
-
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('mouseenter', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'block';
-                });
-
-                dropdown.addEventListener('mouseleave', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'none';
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo">
-            <h>Ropažkalns</h>
+
+<!-- ✅ Clean Bootstrap Navbar with blur -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="<?php echo $base; ?>HomePage.php">Ropažkalns</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $base; ?>HomePage.php">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurTeam.php">Our Team</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rentalsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Rentals
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Corporate Events</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contact
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/GeneralInquieries.php">General Inquiries</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/BookingInformation.php">Booking Information</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <ul class="menu">
-            <li><a href="<?php echo $base; ?>HomePage.php"><button><span>Home</span></button></a></li>
-            <li class="dropdown">
-                <button><span>About</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
-                    <li><a href="<?php echo $base; ?>About/OurTeam.php">Our Team</a></li>
-                    <li><a href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <button><span>Rentals</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Rent for day activities</a></li>
-                    <li><a href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Rent for private events</a></li>
-                    <li><a href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Rent for corporate events</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <button><span>Contact</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="<?php echo $base; ?>Contact/GeneralInquieries.php">General Inquiries</a></li>
-                    <li><a href="<?php echo $base; ?>Contact/BookingInformation.php">Booking Information</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+    </div>
+</nav>
+
+<!-- ✅ Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

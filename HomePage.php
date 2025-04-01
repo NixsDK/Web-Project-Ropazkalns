@@ -5,7 +5,7 @@
 
     <!-- Left Side - Properly sized image -->
     <div class="hero-image">
-        <img src="images/Ropazkalns1.JPG" alt="Ropazkalns Countryside">
+        <img src="images/Ropazkalns2.JPG" alt="Ropazkalns Countryside">
     </div>
 
     <!-- Right Side - Floating text box -->

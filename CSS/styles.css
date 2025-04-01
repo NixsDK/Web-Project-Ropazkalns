@@ -1,45 +1,76 @@
-
+/* HERO SECTION */
 .hero-section {
     position: relative;
-    max-width: 1200px;
     margin: auto;
-    padding-top: 20px;
-    display: grid;
-    grid-template-columns: 270px 1fr;
-    align-items: flex-start;
-    min-height: 705px;
+    padding-top: -20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible !important;
+    z-index: 1 !important;
 }
 
 /* IMAGE LEFT */
 .hero-image {
-    width: 270px;
-    height: 705px;
+    width: 100%;
+    height: 340px;
     overflow: hidden;
-    border-radius: 10px;
-    margin-left: -342px; /* Your original magic trick */
+    margin-left: 0;
 }
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    object-position: top;
 }
 
 /* TEXT BOX */
 .hero-text {
     position: absolute;
-    left: -50px;
-    top: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    padding: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    z-index: 2;
+    backdrop-filter: blur(2px);
+    color: white;
+    padding: 30px;
+    max-width: 700px;
+    text-align: center;
+    z-index: 500 !important; /* lower than dropdown */
 }
 
-/* RESPONSIVE FIX: For small screens */
+.hero-overlay, .jumbotron, .text-box {
+    overflow: visible !important;
+    position: relative;
+    z-index: 1000;
+}
+
+/* NAVBAR stays on top */
+.navbar-nav .dropdown-menu {
+    right: 0;
+    left: auto;
+    transform: translateX(5%);
+}
+
+/* DROPDOWN always floats above hero-text */
+.dropdown-menu {
+    z-index: 10500 !important;
+    position: absolute !important;
+    background-color: rgba(255, 255, 255, 0.97);
+    color: #000;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.dropdown-item:hover {
+    background-color: #e8f5e9; /* light green background */
+    color: #508c39 !important; /* match Ropažkalns green */
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+/* RESPONSIVE FIX */
 @media screen and (max-width: 1024px) {
     .hero-section {
         display: flex;
@@ -56,12 +87,17 @@
     }
 
     .hero-text {
-        position: static;
-        margin-top: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        backdrop-filter: blur(2px);
+        color: white;
+        padding: 30px;
         max-width: 90%;
         text-align: center;
-        z-index: 1;
+        z-index: 500 !important;
     }
 }
-
-
