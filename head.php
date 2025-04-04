@@ -6,7 +6,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ropažkalns Countryside</title>
 
     <?php
     $dir = basename(dirname($_SERVER['SCRIPT_NAME']));
@@ -29,17 +28,15 @@
         }
 
         .navbar {
-            background-color: rgba(173, 216, 230, 0.4) !important;
+            background-color: rgba(107, 162, 181, 0.4) !important;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             z-index: 9999;
         }
 
-        .navbar-brand {
-            font-size: 28px;
-            font-weight: bold;
-            color: #508c39 !important;
+        .navbar-brand img {
+            height: 50px;
         }
 
         .nav-link {
@@ -52,7 +49,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             z-index: 9999 !important;
             position: absolute !important;
-            backdrop-filter: blur(6px); /* frosted glass effect */
+            backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
         }
 
@@ -75,10 +72,9 @@
             padding: 8px;
             font-size: 14px;
             position: relative;
-            bottom: -380px; /* lower the footer */
+            bottom: -380px;
             margin-top: 0;
         }
-
     </style>
 </head>
 <body>
@@ -86,7 +82,9 @@
 <!-- ✅ Clean Bootstrap Navbar with blur -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?php echo $base; ?>HomePage.php">Ropažkalns</a>
+        <a href="<?php echo $base; ?>HomePage.php">
+            <img src="<?php echo $base; ?>images/RopazkalnsLogo2resize.png" alt="Ropažkalns Logo" width="120" height="auto" style="margin-right: 10px;" />
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
