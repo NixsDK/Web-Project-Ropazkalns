@@ -53,6 +53,19 @@
             -webkit-backdrop-filter: blur(6px);
         }
 
+        /* general dropdown alignment (others like About, Rentals) */
+        .navbar-nav .dropdown-menu {
+            left: 0 !important;
+            right: auto !important;
+            transform: none !important;
+        }
+
+        /* OVERRIDE for Contact dropdown */
+        #contactDropdown + .dropdown-menu {
+            left: auto !important;
+            right: 0 !important;
+            transform: none !important;
+        }
         .dropdown-item {
             color: #333;
             font-weight: 500;
