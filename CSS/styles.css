@@ -110,10 +110,10 @@
 /* SCROLL STYLE TEXT BOX */
 .scroll-box {
     background-image: url('../images/oldpaper.png'); /* adjust path if needed */
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 40px 30px;
+    padding: 160px 60px;
     border-radius: 10px;
     font-family: 'Georgia', serif;
     font-size: 18px;
@@ -122,4 +122,11 @@
     max-width: 800px;
     margin: 0 auto 40px auto;
     position: relative;
+}
+.scroll-text {
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
