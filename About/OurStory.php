@@ -11,7 +11,7 @@
     </div>
 
     <!-- Existing content (unchanged) -->
-    <div class="story-background">
+    <div class="scroll-box">
         <p style="
             color: #FFFFFF;
             background-color: rgba(0, 0, 0, 0.7);
