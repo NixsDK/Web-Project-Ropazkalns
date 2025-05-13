@@ -61,15 +61,17 @@
         </section>
         </body>
         <div class="rental-cards">
-            <div class="rental-card">
+            <div class="rental-card" onclick="location.href='Rentals/CampingHauses.php'">
                 <img src="images/kempingaNamins.jpeg" alt="Kempinga namiņi">
                 <div class="card-label">Kempinga namiņi</div>
             </div>
-            <div class="rental-card">
+
+            <div class="rental-card" onclick="location.href='Rentals/TentPlace.php'">
                 <img src="images/teltis.jpeg" alt="Telšu vietas">
                 <div class="card-label">Telšu vietas</div>
             </div>
-            <div class="rental-card">
+
+            <div class="rental-card" onclick="location.href='Rentals/ActivitiesInNature.php'">
                 <img src="images/pargajiens.jpeg" alt="Aktivitātes dabā">
                 <div class="card-label">Aktivitātes dabā</div>
             </div>
