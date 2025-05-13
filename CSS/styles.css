@@ -28,19 +28,23 @@
 }
 
 .hero-buttons {
-    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.01);
+    position: absolute;
+    top: 80%; /* try 75% to 90% to test */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 40px;
+    z-index: 20;
 }
 
 .btn-rent {
     background-color: #508c39;
     color: white;
     font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 8px;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 12px;
     text-decoration: none;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -129,4 +133,36 @@
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85);
     padding: 0 20px;
     margin-bottom: 20px;
+}
+.intro-section {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.info-box {
+    background-color: #ffffff;
+    border-left: 5px solid #508c39;
+    padding: 20px 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.info-box h2 {
+    color: #3b5e28;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.highlight-note {
+    background-color: #f8ffea;
+    padding: 20px 25px;
+    border-left: 6px solid #9dc183;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }

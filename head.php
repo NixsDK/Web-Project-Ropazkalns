@@ -23,15 +23,13 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: #fdfdfd url('/images/abstract4.jpg') no-repeat center top;
-            background-size: cover;
+            background-color: #EDE8D0;
         }
 
         .navbar {
-            background-color: rgba(173, 216, 230, 0.4); !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             z-index: 9999;
         }
 
@@ -76,11 +74,9 @@
         }
 
         footer {
-            background: rgba(173, 216, 230, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            color: black;
+            background: rgb(253, 246, 236);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #2e2e2e;
             text-align: center;
             padding: 8px;
             font-size: 14px;
