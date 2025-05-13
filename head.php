@@ -124,6 +124,7 @@
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Corporate Events</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
                     </ul>
                 </li>
 
