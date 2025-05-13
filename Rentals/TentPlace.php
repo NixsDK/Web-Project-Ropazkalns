@@ -20,7 +20,7 @@
             <ul>
                 <li>Telšu novietošana ezera krasta zālienā;</li>
                 <li>Iespējams elektrības pieslēgums;</li>
-                <li>Virtuve, WC un duša sanmezglu ēkā;</li>
+                <li>Virtuve, tualete un duša sanitārā mezgla ēkā;</li>
                 <li>Galdi ar soliem, grils, ugunskura vieta;</li>
                 <li>Izbraukšana līdz 16:00.</li>
             </ul>
