@@ -324,3 +324,42 @@
     height: 149px;
     object-fit: cover;
 }
+
+
+/* CONTACT PAGE */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.contact-form button {
+    background-color: #508c39;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #3c6c2c;
+}
+
+.contact-form label {
+    color: #000; /* Black */
+    font-weight: 600;
+}
+
