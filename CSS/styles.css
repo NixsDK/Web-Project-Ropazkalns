@@ -324,3 +324,28 @@
     height: 149px;
     object-fit: cover;
 }
+/* Specific layout for ActivitiesInNature */
+.rental-activities .rental-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.rental-activities .rental-text {
+    flex: 1 1 55%;
+}
+
+.rental-activities .rental-image {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rental-activities .rental-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

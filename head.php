@@ -111,7 +111,6 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                         <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurTeam.php">Our Team</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
                     </ul>
                 </li>
@@ -126,6 +125,7 @@
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Corporate Events</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
                     </ul>
                 </li>
 
