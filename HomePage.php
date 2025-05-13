@@ -15,7 +15,7 @@
         <div class="hero-buttons">
             <a href="Rentals/RentForDayActivities.php" class="btn btn-rent">Day Activities</a>
             <a href="Rentals/RentForPrivateEvents.php" class="btn btn-rent">Private Events</a>
-            <a href="Rentals/RentForCorporateEvents.php" class="btn btn-rent">Corporate Events</a>
+            <a href="Rentals/RentalPrices.php" class="btn btn-rent">Rental prices</a>
         </div>
     </section>
 
