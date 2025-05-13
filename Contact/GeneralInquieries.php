@@ -39,6 +39,7 @@ if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") 
     </form>
 </main>
 
+
 <?php include "../footer.php"; ?>
 </body>
 </html>
