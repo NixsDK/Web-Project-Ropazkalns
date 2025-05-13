@@ -27,8 +27,8 @@
                 (bērniem līdz 10g.v. 0,50EUR stundā)
             </p>
             <p>
-                Kempings atrodas <strong>GNP teritorijā</strong>, tāpēc der atcerēties, ka ezera nav atļauts plūkt ūdens augus, <br>
-                braukt ar ūdens motocikliem, mazgāšanai lietot ģīmiskos līdzekļus (ziepes, veļas pulverus un tml.), peldināt dzīvniekus.
+                Kempings atrodas <strong>GNP teritorijā</strong>, tāpēc der atcerēties, ka ezerā nav atļauts plūkt ūdens augus, <br>
+                braukt ar ūdens motocikliem, mazgāšanai lietot ķīmiskos līdzekļus (ziepes, veļas pulverus un tml.), peldināt dzīvniekus.
             </p>
 
             <div class="highlight-note">
