@@ -46,7 +46,35 @@
                 If you're visiting with pets (especially <strong>dogs</strong>), please check our rules on the <a href="#">Pet Guidelines</a> page.
             </p>
         </div>
-    </section>
+        <head>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        </head>
+
+        <body>
+        <section class="kempings-section">
+            <div class="kempings-box">
+                <h2>
+                    <i class="fa-solid fa-house" style="color: #508c39; margin-right: 8px;"></i>
+                    Kempings
+                </h2>
+            </div>
+        </section>
+        </body>
+        <div class="rental-cards">
+            <div class="rental-card">
+                <img src="images/kempingaNamins.jpeg" alt="Kempinga namiņi">
+                <div class="card-label">Kempinga namiņi</div>
+            </div>
+            <div class="rental-card">
+                <img src="images/teltis.jpeg" alt="Telšu vietas">
+                <div class="card-label">Telšu vietas</div>
+            </div>
+            <div class="rental-card">
+                <img src="images/pargajiens.jpeg" alt="Aktivitātes dabā">
+                <div class="card-label">Aktivitātes dabā</div>
+            </div>
+        </div>
+
 </main>
 
 <?php include "footer.php"; ?>
