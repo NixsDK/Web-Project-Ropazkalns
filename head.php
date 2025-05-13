@@ -111,7 +111,6 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
                         <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurTeam.php">Our Team</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
                     </ul>
                 </li>
@@ -123,9 +122,10 @@
                     <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForCorporateEvents.php">Corporate Events</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental prices</a></li>
                     </ul>
                 </li>
 
