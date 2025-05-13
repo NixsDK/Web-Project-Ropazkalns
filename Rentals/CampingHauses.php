@@ -12,13 +12,13 @@
 
         <div class="rental-content">
             <div class="rental-text">
-                <p>Trīsvietīgi vai četrvietīgi, komfortabli kempinga namiņi klusai atpūtai pie dabas:</p>
+                <p>Pieejami trīsvietīgi un četrvietīgi, komfortabli kempinga namiņi klusai atpūtai pie dabas:</p>
                 <ul>
                     <li>Galdi un krēsli</li>
                     <li>Ledusskapis</li>
                     <li>Gultas veļa (divstāvu gultas)</li>
                 </ul>
-                <p>Virtuve, WC un dušas atrodas tuvējā sanitārajā mezglā.</p>
+                <p>Virtuve, tualete un dušas atrodas tuvējā sanitārajā mezglā.</p>
                 <p>Ierašanās no 15:00, izbraukšana līdz 12:00.</p>
             </div>
         </div>
