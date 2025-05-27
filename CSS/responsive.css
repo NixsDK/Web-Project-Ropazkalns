@@ -94,6 +94,8 @@
             max-width: 90%;
             border-radius: 10px;
             z-index: 2;
+            font-size: 0.95rem;
+            padding: 20px;
         }
     }
 

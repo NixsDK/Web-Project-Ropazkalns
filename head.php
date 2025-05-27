@@ -1,264 +1,147 @@
+<?php
+// head.php (restored structure + Bootstrap + blur fixes)
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Inquiries - Ropazkalns</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <?php
+    $dir = basename(dirname($_SERVER['SCRIPT_NAME']));
+    $base = ($dir === 'About' || $dir === 'Rentals' || $dir === 'Contact') ? '../' : '';
+    ?>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="<?php echo $base; ?>css/styles.css" />
+
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: #fdfdfd url('images/abstract4.jpg') no-repeat center top;
-            background-size: cover;
-            position: relative;
+            background-color: #EDE8D0;
         }
 
-
-
-        section {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            overflow: hidden;
+        .navbar {
+            background-color: rgba(255, 255, 255) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
         }
 
-        /* Mountain layers */
-        section:first-child,
-        section:nth-child(2),
-        section:last-child {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50%; /* Adjust height as needed */
+        .navbar-brand img {
+            height: 50px;
         }
 
-        section:first-child > div:first-child,
-        section:first-child > div:nth-child(2),
-        section:first-child > div:nth-child(3),
-        section:first-child > div:last-child,
-        section:nth-child(2) > div:first-child,
-        section:nth-child(2) > div:last-child,
-        section:last-child > div:first-child,
-        section:last-child > div:nth-child(2),
-        section:last-child > div:last-child {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Your existing styles */
-        * {
-            box-sizing: border-box;
-        }
-
-        .menu {
-            list-style-type: none;
-            padding: 0;
-            margin: 0 auto; /* Centers the menu horizontally */
-            display: flex;
-            justify-content: center; /* Centers buttons */
-            align-items: center; /* Aligns vertically */
-            position: relative;
-            z-index: 2000;
-            top: -10px; /* Moves the menu slightly upwards */
-        }
-
-        header {
-            height: 88px;
-            padding: 20px 0;
-            background: rgba(173, 216, 230, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            z-index: 1000; /* Lower than dropdown */
-            position: relative;
-        }
-
-
-        .menu li {
-            position: relative;
-        }
-
-        .menu li a {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
+        .nav-link {
             font-weight: bold;
-            color: #ffffff; /* Change this color to the desired color for main menu items */
-        }
-
-
-        .menu li:hover > a {
-            background-color: #f2f2f2;
-        }
-
-        .dropdown {
-            position: relative;
-            z-index: 2000;
         }
 
         .dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            min-width: 200px;
-            background-color: #fff;
-            font-weight: bold;
-            color: #000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 3000; /* Ensure it's above other elements */
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 9999 !important;
+            position: absolute !important;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
 
-        .dropdown-menu li a {
-            padding: 8px 16px;
-            color: #000000; /* Change this color to the desired color for dropdown menu items */
+        /* general dropdown alignment (others like About, Rentals) */
+        .navbar-nav .dropdown-menu {
+            left: 0 !important;
+            right: auto !important;
+            transform: none !important;
         }
 
-        .dropdown-menu li:hover > a {
-            background-color: #f2f2f2;
+        /* OVERRIDE for Contact dropdown */
+        #contactDropdown + .dropdown-menu {
+            left: auto !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+        .dropdown-item {
+            color: #333;
+            font-weight: 500;
         }
 
-        /* New button styling */
-        button {
-            display: inline-block;
-            width: 150px;
-            height: 50px;
-            border-radius: 10px;
-            border: 1px solid #03045e;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease-in;
-            z-index: 1;
+        .dropdown-item:hover {
+            background-color: rgba(0, 0, 0, 0.05);
         }
 
-        button::before,
-        button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 0;
-            height: 100%;
-            transform: skew(15deg);
-            transition: all 0.5s;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        button::before {
-            left: -10px;
-            background: #447df2;
-        }
-
-        button::after {
-            right: -10px;
-            background: #447df2;
-        }
-
-        button:hover::before,
-        button:hover::after {
-            width: 58%;
-        }
-
-        button:hover span {
-            color: #ffffff;
-            transition: 0.3s;
-        }
-
-        button span {
-            color: #03045e;
-            font-size: 18px;
-            transition: all 0.3s ease-in;
-        }
-
-        .logo {
-            display: inline-block; /* Make the logo and menu items inline */
-            vertical-align: middle; /* Align vertically in the middle */
-            margin-right: 20px; /* Adjust margin as needed */
-        }
-
-        .logo h {
-            margin: 0; /* Remove default margins */
-            font-size: 32px; /* Adjust font size as needed */
-            color: #508c39; /* Text color */
-            font-weight: bold;
-            position: absolute; /* Allows precise placement */
-            top: 35px; /* Adjust to move higher */
-            left:50px; /* Adjust to align left */
-            z-index: 10; /* Ensures it stays above buttons */
-
-        }
         footer {
-            background: rgba(173, 216, 230, 0.4); /* Light blue with transparency */
-            backdrop-filter: blur(10px); /* Frosted glass effect */
-            -webkit-backdrop-filter: blur(10px); /* Safari support */
-            border-top: 1px solid rgba(255, 255, 255, 0.3); /* Optional subtle border */
-            color: black;
+            background: rgb(253, 246, 236);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #2e2e2e;
             text-align: center;
             padding: 8px;
-            font-size: 12px;
+            font-size: 14px;
             position: relative;
-            bottom: -120px; /* Keeps footer in the same position */
-            margin-top: 330px; /* Maintains spacing from main content */
-            border-radius: 10px; /* Optional: Gives smooth rounded edges */
+            bottom: -380px;
+            margin-top: 0;
         }
-
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown');
-
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener('mouseenter', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'block';
-                });
-
-                dropdown.addEventListener('mouseleave', function() {
-                    this.querySelector('.dropdown-menu').style.display = 'none';
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="logo">
-            <h>Ropažkalns</h>
+
+<!-- ✅ Clean Bootstrap Navbar with blur -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container-fluid">
+        <a href="<?php echo $base; ?>HomePage.php">
+            <img src="<?php echo $base; ?>images/RopazkalnsLogo2resize.png" alt="Ropažkalns Logo" width="120" height="auto" style="margin-right: 10px;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $base; ?>HomePage.php">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rentalsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Rentals
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental prices</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contact
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/GeneralInquieries.php">General Inquiries</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/BookingInformation.php">Booking Information</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <ul class="menu">
-            <a href="HomePage.php"><button class="button-64" role="button"><span class="text">Home</span></button></a>
-            <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">About</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="OurStory.php">Our Story</a></li> <!-- Updated Our Story link -->
-                    <li><a href="OurTeam.php">Our Team</a></li> <!-- Updated Our Team link -->
-                    <li><a href="OurVision.php">Our Vision</a></li> <!-- Updated Our Vision link -->
-                </ul>
-            </li>
-            <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">Rentals</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="RentForDayActivities.php">Rent for day activities</a></li> <!-- Updated Rent for day activities link -->
-                    <li><a href="RentForPrivateEvents.php">Rent for private events</a></li> <!-- Updated Rent for private events link -->
-                    <li><a href="RentForCorporateEvents.php">Rent for corporate events</a></li> <!-- Updated Rent for corporate events link -->
-                </ul>
-            </li>
-            <li class="dropdown">
-                <button class="button-64" role="button"><span class="text">Contact</span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="GeneralInquieries.php">General Inquiries</a></li> <!-- Updated General Inquiries link -->
-                    <li><a href="BookingInformation.php">Booking Information</a></li> <!-- Updated Booking Information link -->
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+    </div>
+</nav>
+
+<!-- ✅ Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
