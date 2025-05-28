@@ -76,7 +76,26 @@
                 <div class="card-label">Aktivitātes dabā</div>
             </div>
         </div>
+        <section class="kempings-section noma-spacing">
+            <div class="kempings-box">
+                <h2>
+                    <i class="fa-solid fa-hot-tub-person" style="color: #508c39; margin-right: 8px;"></i>
+                    Noma
+                </h2>
+            </div>
+        </section>
 
+        <div class="rental-cards">
+            <div class="rental-card" onclick="location.href='Rentals/RentSauna.php'">
+                <img src="images/pirts.jpeg" alt="Pirts noma">
+                <div class="card-label">Pirts noma</div>
+            </div>
+
+            <div class="rental-card" onclick="location.href='Rentals/RentHotTub.php'">
+                <img src="images/kubls.jpeg" alt="Kubls noma">
+                <div class="card-label">Kubls noma</div>
+            </div>
+        </div>
 </main>
 
 <?php include "footer.php"; ?>

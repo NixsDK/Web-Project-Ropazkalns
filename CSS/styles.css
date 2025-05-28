@@ -421,4 +421,6 @@
     color: #000; /* Black */
     font-weight: 600;
 }
-
+.noma-spacing {
+    margin-top: 50px; /* adjust the spacing as you like */
+}

@@ -126,6 +126,8 @@
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental prices</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentSauna.php">Sauna</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentHotTub.php">Hot Tub</a></li>
                     </ul>
                 </li>
 
