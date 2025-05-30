@@ -1,111 +1,59 @@
-<div class="calendar">
-    <div class="calendar__picture">
-        <h3>April  2024</h3> <!-- Display the month and year -->
-    </div>
-    <div class="calendar__date">
-        <div class="calendar__day">M</div>
-        <div class="calendar__day">T</div>
-        <div class="calendar__day">W</div>
-        <div class="calendar__day">T</div>
-        <div class="calendar__day">F</div>
-        <div class="calendar__day">S</div>
-        <div class="calendar__day">S</div>
-        <div class="calendar__number"></div>
-        <div class="calendar__number"></div>
-        <div class="calendar__number"></div>
-        <div class="calendar__number">1</div>
-        <div class="calendar__number">2</div>
-        <div class="calendar__number">3</div>
-        <div class="calendar__number">4</div>
-        <div class="calendar__number">5</div>
-        <div class="calendar__number">6</div>
-        <div class="calendar__number">7</div>
-        <div class="calendar__number">8</div>
-        <div class="calendar__number">9</div>
-        <div class="calendar__number">10</div>
-        <div class="calendar__number">11</div>
-        <div class="calendar__number">12</div>
-        <div class="calendar__number">13</div>
-        <div class="calendar__number">14</div>
-        <div class="calendar__number">15</div>
-        <div class="calendar__number">16</div>
-        <div class="calendar__number">17</div>
-        <div class="calendar__number calendar__number--current">7</div>
-        <div class="calendar__number">19</div>
-        <div class="calendar__number">20</div>
-        <div class="calendar__number">21</div>
-        <div class="calendar__number">22</div>
-        <div class="calendar__number">23</div>
-        <div class="calendar__number">24</div>
-        <div class="calendar__number">25</div>
-        <div class="calendar__number">26</div>
-        <div class="calendar__number">27</div>
-        <div class="calendar__number">28</div>
-        <div class="calendar__number">29</div>
-        <div class="calendar__number">30</div>
-    </div>
-</div>
+<!-- calendar container -->
+<div id="calendar" class="calendar"></div>
 
-<style>
-    .calendar {
-        position: relative;
-        width: 300px;
-        height: 100%; /* Set the height to 100% to fill the container */
-        background-color: #fff;
-        box-sizing: border-box;
-        box-shadow: 0 5px 50px rgb(255, 255, 255);
-        border-radius: 8px;
-        overflow: hidden;
-        display: flex; /* Use flexbox for positioning */
-        flex-direction: column; /* Stack elements vertically
-    }
+<!-- calendar logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendar = document.getElementById('calendar');
 
-    .calendar__picture {
-        height: 50px; /* Adjusted height to accommodate year and month */
+        const reservedDates = ['2025-06-05', '2025-06-07']; // Example dates lai parbauditu vai strada
+        //const reservedDates = json_encode($datesFromDB); Tas ko vajadzes izmantot kad bus datubaze
+        const today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
 
-        padding: 20px;
-        color: #000000;
-        top: 9.5cm;
-       /* background: #262626 url("https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=183f2924ba5a8429441804609b2d4f61") no-repeat center / cover;*/
-        text-shadow: 0 2px 2px rgb(255, 255, 255);
-        box-sizing: border-box;
-        display: flex; /* Use flexbox for positioning */
-        justify-content: center; /* Center align text horizontally */
-        align-items: center; /* Center align text vertically */
-    }
+        function renderCalendar(y, m) {
+            const firstDay = new Date(y, m, 1).getDay();
+            const daysInMonth = new Date(y, m + 1, 0).getDate();
 
-    .calendar__date {
-        padding: 20px;
-        flex: 1; /* Allow the calendar grid to expand and fill remaining space */
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        grid-gap: 10px;
-        box-sizing: border-box;
+            let monthName = new Date(y, m).toLocaleString('default', { month: 'long' });
 
-    }
+            let html = `
+                <div class="calendar-header">
+                    <button onclick="changeMonth(-1)">‹</button>
+                    <h3>${monthName} ${y}</h3>
+                    <button onclick="changeMonth(1)">›</button>
+                </div>
+                <div class="calendar-grid">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+            `;
 
-    .calendar__day {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 25px;
-        font-weight: 600;
-        color: #262626;
-    }
+            for (let i = 0; i < firstDay; i++) html += '<div class="empty"></div>';
 
-    .calendar__number {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 25px;
-        color: #262626;
-        cursor: pointer;
-    }
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dateStr = `${y}-${String(m + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const isReserved = reservedDates.includes(dateStr);
+                const isToday = day === today.getDate() && m === today.getMonth() && y === today.getFullYear();
 
-    .calendar__number--current {
-        background-color: #009688;
-        color: #fff;
-        font-weight: 700;
-    }
-</style>
+                html += `<div class="day${isToday ? ' today' : ''}${isReserved ? ' reserved' : ''}">${day}</div>`;
+            }
 
+            html += '</div>';
+            calendar.innerHTML = html;
+        }
+
+        window.changeMonth = function(offset) {
+            month += offset;
+            if (month > 11) {
+                month = 0;
+                year++;
+            } else if (month < 0) {
+                month = 11;
+                year--;
+            }
+            renderCalendar(year, month);
+        };
+
+        renderCalendar(year, month);
+    });
+</script>
