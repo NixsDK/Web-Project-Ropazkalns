@@ -487,3 +487,52 @@ img[alt="Water Skis"] + .card-label {
     margin: 10px 0;
     color: #ffffff;
 }
+/* CALENDAR STYLE*/
+
+.calendar {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.calendar h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #2e2e2e;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.calendar-grid div {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+}
+
+.calendar-grid .empty {
+    background-color: transparent;
+}
+
+.calendar-grid .day {
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-grid .day:hover {
+    background-color: #c8e6c9;
+}
+
+.calendar-grid .today {
+    background-color: #aed581;
+    color: white;
+}
+
+.calendar-grid .reserved {
+    background-color: #ef9a9a;
+    color: white;
+}
