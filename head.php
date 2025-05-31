@@ -88,7 +88,7 @@
 </head>
 <body>
 
-<!-- ✅ Clean Bootstrap Navbar with blur -->
+<!-- Clean Bootstrap Navbar with blur -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
         <a href="<?php echo $base; ?>HomePage.php">
@@ -102,40 +102,61 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $base; ?>HomePage.php">Home</a>
+                    <a class="nav-link" href="<?php echo $base; ?>HomePage.php">Sākumlapa</a>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        About
+                        Par
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Our Story</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Our Vision</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurStory.php">Mūsu Stāsts</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>About/OurVision.php">Mūsu vīzija</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="rentalsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Rentals
+                        Īre
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental prices</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Activities</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Dienas aktivitātes</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Kempinga namiņš</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Telšu vieta</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Dabas aktivitātes</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentSauna.php">Pirts</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentHotTub.php">Kubls</a></li>
+                                        </ul>
+                                    </li>
+                                                    </li>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+                                dropdownSubmenus.forEach(submenu => {
+                                    submenu.addEventListener('click', function (e) {
+                                        e.stopPropagation();
+                                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                                        dropdownMenu.classList.toggle('show');
+                                    });
+                                });
+                            });
+                        </script>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Privātie pasākumi</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Īres cenas</a></li>
+                        
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Contact
+                        Kontaktinformācija
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="contactDropdown">
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/GeneralInquieries.php">General Inquiries</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/BookingInformation.php">Booking Information</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/GeneralInquieries.php">Vispārīgi jautājumi</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Contact/BookingInformation.php">Rezervācijas informācija</a></li>
                     </ul>
                 </li>
             </ul>
@@ -143,5 +164,5 @@
     </div>
 </nav>
 
-<!-- ✅ Bootstrap JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

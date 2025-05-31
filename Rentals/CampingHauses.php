@@ -2,7 +2,7 @@
 
 <main class="rental-details-section">
     <section class="rental-header">
-        <h2>Kempinga namiņi</h2>
+        <h2></h2>
     </section>
 
     <section class="rental-section">

@@ -5,45 +5,45 @@
     <section class="hero-container">
         <img src="images/Ropazkalns2.JPG" alt="Ropažkalns Countryside" class="hero-image">
         <div class="hero-overlay">
-            <h2>Welcome to Ropažkalns</h2>
+            <h2>Laipni lūdzam Ropažkalnā</h2>
             <p>
-                Ropazkalns is located in the beautiful countryside of Latvia, surrounded by lush forests and rolling hills.
-                Our passion for the outdoors and our love for nature inspired us to create a place where people can escape
-                from the hustle and bustle of the city and enjoy the tranquility of the countryside.
+                Ropažkalns atrodas skaistā Latvijas lauku apvidū, ko ieskauj zaļojoši meži un viļņoti pakalni. Mūsu
+                aizraušanās ar dabu un mīlestība pret lauku vidi iedvesmoja mūs radīt vietu, kur cilvēki var aizbēgt
+                no pilsētas steigas un izbaudīt lauku mieru.
             </p>
         </div>
         <div class="hero-buttons">
-            <a href="Rentals/RentForDayActivities.php" class="btn btn-rent">Day Activities</a>
-            <a href="Rentals/RentForPrivateEvents.php" class="btn btn-rent">Private Events</a>
-            <a href="Rentals/RentalPrices.php" class="btn btn-rent">Rental prices</a>
+            <a href="Rentals/RentForDayActivities.php" class="btn btn-rent">Dienas aktiviātes</a>
+            <a href="Rentals/RentForPrivateEvents.php" class="btn btn-rent">Privātie pasākumi</a>
+            <a href="Rentals/RentalPrices.php" class="btn btn-rent">Īres cenas</a>
         </div>
     </section>
 
     <!-- New Informative Section -->
     <section class="intro-section">
         <div class="info-box">
-            <h2>Welcome to Ropažkalns</h2>
+            <h2>Laipni lūdzam Ropažkalnā</h2>
             <p>
-                We invite you to take a break from the daily rush and recharge your soul while enjoying peaceful mornings and magical evenings filled with birdsong, silence, and nature.
+                Aicinām jūs uz mirkli apstāties no ikdienas steigas un uzlādēt dvēseli, izbaudot mierīgus rītus un burvīgus vakarus, kas piepildīti ar putnu dziesmām, klusumu un dabu.
             </p>
             <p>
-                Whether you’re planning a <strong>holiday in a cabin</strong> or <strong>camping with your own tent or camper</strong>, Ropažkalns offers a wide and peaceful space for you to relax.
+                Neatkarīgi no tā, vai plānojat <strong>atpūtu namiņā</strong> vai <strong>kempingu ar savu telti vai kemperi</strong>, Ropažkalns piedāvā plašu un mierīgu vietu atpūtai.
             </p>
         </div>
 
         <div class="highlight-note">
             <p>
-                We kindly welcome guests who appreciate <strong>quiet nature retreats</strong> (music is not played, except on special occasions).
-                <strong>After 23:00 – 100% silence is expected.</strong><br> We do not host loud parties or events.
+                Mēs laipni uzņemam viesus, kuri novērtē <strong>klusas dabas atpūtas vietas</strong> (mūzika netiek atskaņota, izņemot īpašos gadījumos).
+                <strong>Pēc 23:00 – tiek sagaidīts 100% klusums.</strong><br> Mēs nerīkojam skaļas ballītes vai pasākumus.
             </p>
         </div>
 
         <div class="info-box">
             <p>
-                Ropažkalns is open <strong>from April 1st to October 1st</strong> each year.
+                Ropažkalns ir atvērts <strong>no 1. aprīļa līdz 1. oktobrim</strong> katru gadu.
             </p>
             <p>
-                If you're visiting with pets (especially <strong>dogs</strong>), please check our rules on the <a href="#">Pet Guidelines</a> page.
+                Ja apmeklējat mūs ar mājdzīvniekiem (īpaši <strong>suņiem</strong>), lūdzu, iepazīstieties ar mūsu noteikumiem lapā <a href="#">Noteikumi par mājdzīvniekiem</a>.
             </p>
         </div>
         <head>
@@ -76,7 +76,26 @@
                 <div class="card-label">Aktivitātes dabā</div>
             </div>
         </div>
+        <section class="kempings-section noma-spacing">
+            <div class="kempings-box">
+                <h2>
+                    <i class="fa-solid fa-hot-tub-person" style="color: #508c39; margin-right: 8px;"></i>
+                    Noma
+                </h2>
+            </div>
+        </section>
 
+        <div class="rental-cards">
+            <div class="rental-card" onclick="location.href='Rentals/RentSauna.php'">
+                <img src="images/pirts.jpeg" alt="Pirts noma">
+                <div class="card-label">Pirts noma</div>
+            </div>
+
+            <div class="rental-card" onclick="location.href='Rentals/RentHotTub.php'">
+                <img src="images/kubls.jpeg" alt="Kubls noma">
+                <div class="card-label">Kubls noma</div>
+            </div>
+        </div>
 </main>
 
 <?php include "footer.php"; ?>
