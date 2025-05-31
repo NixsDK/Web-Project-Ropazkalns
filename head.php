@@ -88,7 +88,7 @@
 </head>
 <body>
 
-<!-- ✅ Clean Bootstrap Navbar with blur -->
+<!-- Clean Bootstrap Navbar with blur -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container-fluid">
         <a href="<?php echo $base; ?>HomePage.php">
@@ -120,14 +120,33 @@
                         Rentals
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">Activities</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Day Activities</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Nature activities</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentSauna.php">Sauna</a></li>
+                                            <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentHotTub.php">Hot Tub</a></li>
+                                        </ul>
+                                    </li>
+                                                    </li>
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const dropdownSubmenus = document.querySelectorAll('.dropdown-submenu');
+                                dropdownSubmenus.forEach(submenu => {
+                                    submenu.addEventListener('click', function (e) {
+                                        e.stopPropagation();
+                                        const dropdownMenu = this.querySelector('.dropdown-menu');
+                                        dropdownMenu.classList.toggle('show');
+                                    });
+                                });
+                            });
+                        </script>
                         <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForPrivateEvents.php">Private Events</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Camping houses</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/TentPlace.php">Tent Place</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/ActivitiesInNature.php">Activities</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental prices</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentSauna.php">Sauna</a></li>
-                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentHotTub.php">Hot Tub</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentalPrices.php">Rental Pricing</a></li>
+                        
                     </ul>
                 </li>
 
@@ -145,5 +164,5 @@
     </div>
 </nav>
 
-<!-- ✅ Bootstrap JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
