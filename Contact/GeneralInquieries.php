@@ -1,19 +1,32 @@
 <?php
-if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] === "POST") {
-    $name    = htmlspecialchars(trim($_POST["name"] ?? ''));
-    $email   = htmlspecialchars(trim($_POST["email"] ?? ''));
-    $message = htmlspecialchars(trim($_POST["message"] ?? ''));
+require __DIR__ . '/../vendor/autoload.php';
 
-    $to      = "your-email@example.com"; // NOMAINIET AR SAVU EPASTU
-    $subject = "New Contact Form Submission";
-    $body    = "Name: $name\nEmail: $email\nMessage:\n$message";
-    $headers = "From: $email";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-    if (mail($to, $subject, $body, $headers)) {
-        $success = "Thank you! Your message has been sent.";
-    } else {
-        $error = "Oops! Something went wrong. Please try again.";
-    }
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmass.co';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'gmass';
+    $mail->Password   = '7896fc55-3afb-4c58-ba14-bf43053f3149';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    $mail->setFrom('anrik.fedotovs2003@gmail.com', 'Contact Form');
+    $mail->addAddress('niksdanielskalnins@gmail.com');
+    $mail->addReplyTo($email, $name);
+
+    $mail->isHTML(true);
+    $mail->Subject = 'New Contact Form Submission';
+    $mail->Body    = 'Name: ' . $_POST['name'] . '<br>Email: ' . $_POST['email'] . '<br>Message: ' . $_POST['message'];
+
+    $mail->send();
+    echo 'Email sent successfully';
+} catch (Exception $e) {
+    echo 'Email could not be sent. Error: ', $mail->ErrorInfo;
 }
 ?>
 
