@@ -121,7 +121,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="rentalsDropdown">
                                     <li class="dropdown-submenu">
-                                        <a class="dropdown-item dropdown-toggle" href="#">Activities</a>
+                                        <a class="dropdown-item dropdown-toggle" href="#">Aktivitātes</a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/RentForDayActivities.php">Dienas aktivitātes</a></li>
                                             <li><a class="dropdown-item" href="<?php echo $base; ?>Rentals/CampingHauses.php">Kempinga namiņš</a></li>
