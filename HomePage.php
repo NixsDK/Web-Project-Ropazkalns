@@ -93,7 +93,7 @@
 
             <div class="rental-card" onclick="location.href='Rentals/RentHotTub.php'">
                 <img src="images/kubls.jpeg" alt="Kubls noma">
-                <div class="card-label">Kubls noma</div>
+                <div class="card-label">Kubla noma</div>
             </div>
         </div>
 </main>
